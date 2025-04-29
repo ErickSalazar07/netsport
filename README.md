@@ -6,3 +6,25 @@
 - Alejandro Pinzon
 - Felipe Garrido
 - Erick Salazar
+
+### Descripcion del repositorio
+
+Este repositorio se utilizara para guardar el codigo de los mockups y el MVP, de la materia `Proyecto de Innovacion`.
+
+
+### Comandos y prerequisitos para ejecutar el proyecto
+
+#### Instalar node.js
+```bash
+sudo apt install node
+```
+
+#### Instalar Angular 16
+```bash
+npm install -g @angular/cli@16
+```
+
+#### Ejecutar el proyecto
+```bash
+ng serve
+```
