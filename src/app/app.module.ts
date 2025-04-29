@@ -15,6 +15,10 @@ import { VerJugadoresComponent } from './jugador/ver-jugadores/ver-jugadores.com
 import { AgregarJugadorComponent } from './jugador/agregar-jugador/agregar-jugador.component';
 import { AgregarArrendadorComponent } from './arrendador/agregar-arrendador/agregar-arrendador.component';
 import { VerArrendadoresComponent } from './arrendador/ver-arrendadores/ver-arrendadores.component';
+import { InicioComponent } from './home/inicio/inicio.component';
+import { HomeArrendadorComponent } from './home/home-arrendador/home-arrendador.component';
+import { HomeJugadorComponent } from './home/home-jugador/home-jugador.component';
+import { VerReservaComponent } from './reserva/ver-reserva/ver-reserva.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,10 @@ import { VerArrendadoresComponent } from './arrendador/ver-arrendadores/ver-arre
     AgregarJugadorComponent,
     AgregarArrendadorComponent,
     VerArrendadoresComponent,
+    InicioComponent,
+    HomeArrendadorComponent,
+    HomeJugadorComponent,
+    VerReservaComponent,
   ],
   imports: [
     BrowserModule,
