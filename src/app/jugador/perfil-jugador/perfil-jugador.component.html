@@ -1,0 +1,10 @@
+<h1>Perfil del Jugador</h1>
+
+<section class="informacion-jugador" *ngIf="jugador !== undefined">
+  <p>ID: {{jugador.id}}</p>
+  <p>Nombre: {{jugador.nombre}}</p>
+  <p>Usuario: {{jugador.usuario}}</p>
+  <p>Numero partidos ganados: {{jugador.numPartidosGanados}}</p>
+  <p>Numero partidos perdidos: {{jugador.numPartidosPerdidos}}</p>
+  <p>Total partidos jugados: {{jugador.numPartidosGanados + jugador.numPartidosPerdidos}}</p>
+</section>

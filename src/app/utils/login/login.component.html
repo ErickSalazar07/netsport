@@ -1,0 +1,8 @@
+<h1>Login</h1>
+<form>
+  <label for="txt-usuario">Usuario</label>
+  <input type="text" id="txt-usuario" [(ngModel)]="txtUsuario" name="usuario">
+  <label for="txt-constrasena">Contraseña</label>
+  <input type="password" id="txt-constrasena" [(ngModel)]="txtContrasena" name="contrasena">
+  <button (click)="login()">Ingresar</button>
+</form>
