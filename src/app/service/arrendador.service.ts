@@ -23,17 +23,21 @@ export class ArrendadorService {
   arrendadores:Arrendador[] = [
     {
       id: 1,
-      nombre: "Pacho",
-      usuario: "pacho",
+      nombre: "Francisco Garcia",
+      usuario: "francisco",
       contrasena: "123",
-      numCanchasRegistradas: 3
     },
     {
       id: 2,
-      nombre: "Juan",
+      nombre: "Juan Perez",
       usuario: "juan",
       contrasena: "456",
-      numCanchasRegistradas: 0
     },
+    {
+      id: 3,
+      nombre: "Ana Martinez",
+      usuario: "ana",
+      contrasena: "789",
+    }
   ];
 }
