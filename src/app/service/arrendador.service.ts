@@ -6,9 +6,14 @@ import { Arrendador } from '../model/arrendador';
 })
 export class ArrendadorService {
 
+// Dependencias
   constructor() { }
 
 // Metodos o servicios que provee la clase ArrendadorService.
+
+  findAll() {
+    return this.arrendadores;
+  }
 
   findById(id:number) {
     return this.arrendadores.find(a => a.id === id);
@@ -16,6 +21,16 @@ export class ArrendadorService {
 
   findByUsuarioAndContrasena(user:string,pass:string) {
     return this.arrendadores.find(a => a.usuario === user && a.contrasena === pass);
+  }
+
+  updateArrendador(arrendador:Arrendador) {
+    let index = this.arrendadores.findIndex(a => a.id == arrendador.id);
+    if(index !== -1)
+      this.arrendadores[index] = arrendador;
+  }
+
+  deleteById(id:number) {
+    this.arrendadores = this.arrendadores.filter(a => a.id !== id);
   }
 
 // Base de datos quemada en el archivo.

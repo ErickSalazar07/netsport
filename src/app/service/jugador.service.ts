@@ -6,6 +6,7 @@ import { Jugador } from '../model/jugador';
 })
 export class JugadorService {
 
+// Dependencias
   constructor() { }
 
 // Metodos de la clase o servicios que provee.
@@ -15,8 +16,7 @@ export class JugadorService {
   }
 
   findById(id:number) {
-    let jugador = this.jugadores.find(j => j.id === id);
-    return jugador ? jugador : null;
+    return this.jugadores.find(j => j.id === id);
   }
 
   findByUsuarioAndContrasena(user:string,pass:string) {
@@ -24,12 +24,10 @@ export class JugadorService {
     find(j => j.usuario === user && j.contrasena === pass);
   }
 
-  updateJugador(jugadorUpdate:Jugador) {
-    for(let jugador of this.jugadores) 
-      if(jugador.id === jugadorUpdate.id) {
-        jugador = jugadorUpdate
-        return
-      }
+  updateJugador(jugador:Jugador) {
+    let index = this.jugadores.findIndex(j => j.id === jugador.id);
+    if(index !== -1)
+      this.jugadores[index] = jugador;
   }
 
   deleteById(id:number) {
@@ -45,6 +43,7 @@ export class JugadorService {
       nombre: "Erick Torres",
       usuario: "erick",
       contrasena: "123",
+      deporte: "Futbol",
       horaDisponible: 8,
       numPartidosGanados: 0,
       numPartidosPerdidos: 5
@@ -54,6 +53,7 @@ export class JugadorService {
       nombre: "María López",
       usuario: "maria",
       contrasena: "abc",
+      deporte: "Futbol",
       horaDisponible: 15,
       numPartidosGanados: 20,
       numPartidosPerdidos: 10,
@@ -62,7 +62,8 @@ export class JugadorService {
       id: 3,
       nombre: "Carlos Ruiz",
       usuario: "carlos",
-      contrasena: "deportes",
+      contrasena: "abc",
+      deporte: "Futbol",
       horaDisponible: 5,
       numPartidosGanados: 3,
       numPartidosPerdidos: 7,

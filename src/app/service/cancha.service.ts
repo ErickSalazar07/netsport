@@ -8,6 +8,7 @@ import { Cancha } from '../model/cancha';
 })
 export class CanchaService {
 
+// Dependencias
   constructor(
     private arrendadorServicio:ArrendadorService,
     private jugadorServicio:JugadorService
@@ -15,7 +16,23 @@ export class CanchaService {
 
 // Metodos o servicios que provee la clase ArrendadorService.
 
+  findAll() {
+    return this.canchas;
+  }
 
+  findById(id:number) {
+    return this.canchas.find(c => c.id === id);
+  }
+
+  updateCancha(cancha:Cancha) {
+    let index = this.canchas.findIndex(c => c.id === cancha.id);
+    if(index !== -1)
+      this.canchas[index] = cancha;
+  }
+
+  deleteById(id:number) {
+    this.canchas = this.canchas.filter(c => c.id !== id);
+  }
 
 // Base de datos quemada en el archivo.
 
@@ -24,72 +41,29 @@ export class CanchaService {
       id: 1,
       numMaxJugadores: 10,
       tipoCancha: "Futbol 5",
-      arrendador:
-      {
-        id: 1,
-        nombre: "Francisco Garcia",
-        usuario: "francisco",
-        contrasena: "123",
-      },
+      arrendador: this.arrendadorServicio.findById(1)!,
       jugadores:
       [
-        {
-          id: 1,
-          nombre: "Erick Torres",
-          usuario: "erick",
-          contrasena: "123",
-          horaDisponible: 8,
-          numPartidosGanados: 0,
-          numPartidosPerdidos: 5
-        },
-        {
-          id: 2,
-          nombre: "María López",
-          usuario: "maria",
-          contrasena: "abc",
-          horaDisponible: 15,
-          numPartidosGanados: 20,
-          numPartidosPerdidos: 10,
-        }
+        this.jugadorServicio.findById(1)!,
+        this.jugadorServicio.findById(2)!
       ]
     },
     {
       id: 2,
       numMaxJugadores: 1,
       tipoCancha: "Padel Solitario",
-      arrendador:
-      {
-        id: 2,
-        nombre: "Juan Perez",
-        usuario: "juan",
-        contrasena: "456",
-      },
+      arrendador: this.arrendadorServicio.findById(2)!,
       jugadores:
       [
-        {
-          id: 3,
-          nombre: "Carlos Ruiz",
-          usuario: "carlos",
-          contrasena: "deportes",
-          horaDisponible: 5,
-          numPartidosGanados: 3,
-          numPartidosPerdidos: 7,
-        }
+        this.jugadorServicio.findById(3)!
       ]
     },
     {
       id: 3,
       numMaxJugadores: 2,
       tipoCancha: "Pádel",
-      arrendador:
-      {
-        id: 3,
-        nombre: "Ana Martinez",
-        usuario: "ana",
-        contrasena: "789",
-      },
+      arrendador: this.arrendadorServicio.findById(3)!,
       jugadores: []
     }
   ];
-
 }

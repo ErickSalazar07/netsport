@@ -10,7 +10,7 @@ import { JugadorService } from 'src/app/service/jugador.service';
 })
 export class PerfilJugadorComponent {
 
-  jugador:Jugador|undefined = undefined;
+  jugador!:Jugador;
 
   constructor(
     private jugadorServicio:JugadorService,
@@ -19,6 +19,6 @@ export class PerfilJugadorComponent {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    this.jugador = this.jugadorServicio.findById(Number(id));
+    this.jugador = this.jugadorServicio.findById(Number(id))!;
   }
 }

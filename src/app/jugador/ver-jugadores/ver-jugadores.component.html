@@ -1,1 +1,23 @@
-<p>ver-jugadores works!</p>
+<h1>Jugadores Disponibles</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Hora Disponible</th>
+      <th>Deporte Jugado</th>
+      <th>Partidos Ganados</th>
+      <th>Partidos Perdidos</th>
+      <th>Total Partidos Jugados</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jugador of jugadores">
+      <td>{{jugador.nombre}}</td>
+      <td>{{jugador.horaDisponible}}:00</td>
+      <td>{{jugador.deporte}}</td>
+      <td>{{jugador.numPartidosGanados}}</td>
+      <td>{{jugador.numPartidosPerdidos}}</td>
+      <td>{{jugador.numPartidosGanados + jugador.numPartidosPerdidos}}</td>
+    </tr>
+  </tbody>
+</table>
