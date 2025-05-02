@@ -1,65 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Arrendador } from '../model/arrendador';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArrendadorService {
 
+  URL_ROOT = "http://localhost:8090/arrendador";
+
 // Dependencias
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 // Metodos o servicios que provee la clase ArrendadorService.
 
-  findAll() {
-    return this.arrendadores;
+  findAll(): Observable<Arrendador[]>{
+    return this.http.get<Arrendador[]>(this.URL_ROOT + `/arrendadores`);
   }
 
-  findById(id:number) {
-    return this.arrendadores.find(a => a.id === id);
+  findById(id:number): Observable<Arrendador> {
+    return this.http.get<Arrendador>(this.URL_ROOT + `/get-arrendador/${id}`);
   }
 
-  findByUsuarioAndContrasena(user:string,pass:string) {
-    return this.arrendadores.find(a => a.usuario === user && a.contrasena === pass);
+  findByUsuarioAndContrasena(user:string,pass:string): Observable<Arrendador> {
+    return this.http.get<Arrendador>(this.URL_ROOT + `/get-arrendador-usr-pass/${user}/${pass}`);
   }
 
-  addArrendador(arrendador:Arrendador) {
-    arrendador.id = ++this.ultimoId;
-    this.arrendadores.push(arrendador);
+  addArrendador(arrendador:Arrendador): Observable<any> {
+    return this.http.post<any>(this.URL_ROOT + `/add`,arrendador);
   }
 
-  updateArrendador(arrendador:Arrendador) {
-    let index = this.arrendadores.findIndex(a => a.id == arrendador.id);
-    if(index !== -1)
-      this.arrendadores[index] = arrendador;
+  updateArrendador(arrendador:Arrendador): Observable<any> {
+    return this.http.put<any>(this.URL_ROOT + `/update`,arrendador);
   }
 
-  deleteById(id:number) {
-    this.arrendadores = this.arrendadores.filter(a => a.id !== id);
+  deleteById(id:number): Observable<any> {
+    return this.http.delete<any>(this.URL_ROOT + `/delete/${id}`);
   }
-
-// Base de datos quemada en el archivo.
-
-  ultimoId:number = 3;
-
-  arrendadores:Arrendador[] = [
-    {
-      id: 1,
-      nombre: "Francisco Garcia",
-      usuario: "francisco",
-      contrasena: "123",
-    },
-    {
-      id: 2,
-      nombre: "Juan Perez",
-      usuario: "juan",
-      contrasena: "456",
-    },
-    {
-      id: 3,
-      nombre: "Ana Martinez",
-      usuario: "ana",
-      contrasena: "789",
-    }
-  ];
 }

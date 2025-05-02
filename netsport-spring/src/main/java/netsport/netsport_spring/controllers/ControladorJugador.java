@@ -44,6 +44,13 @@ public class ControladorJugador {
     return jugadorServicio.findById(id);
   }
 
+  @GetMapping("/get-jugador-usr-pass/{usr}/{pass}")
+  public Jugador obtenerJugadorPorUsuarioYContrasena(@PathVariable("usr") String usuario,
+    @PathVariable("pass") String contrasena) {
+
+    return jugadorServicio.findByUsuarioAndContrasena(usuario, contrasena);
+  }
+
 // PUT
 
   @PutMapping("/update")

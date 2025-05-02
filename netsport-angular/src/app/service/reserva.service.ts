@@ -1,48 +1,38 @@
 import { Injectable } from '@angular/core';
-import { CanchaService } from './cancha.service';
 import { Reserva } from '../model/reserva';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ReservaService {
 
+  URL_ROOT = "http://localhost:8090/reserva";
+
 // Dependencias
-  constructor(
-    private canchaServicio:CanchaService
-  ) { }
+
+  constructor(private http:HttpClient) { }
 
 // Metodos o servicios de la clase
 
-  findAll() {
-    return this.reservas;
+  findAll(): Observable<Reserva[]> {
+    return this.http.get<Reserva[]>(this.URL_ROOT + `/reservas`);
   }
 
-  findById(id:number) {
-    return this.reservas.find(r => r.id === id);
+  findById(id:number): Observable<Reserva> {
+    return this.http.get<Reserva>(this.URL_ROOT + `/get-reserva/${id}`);
   }
 
-  updateReserva(reserva:Reserva) {
-    let index = this.reservas.findIndex(r => r.id === reserva.id);
-    if(index !== -1)
-      this.reservas[index] = reserva;
+  addReserva(reserva:Reserva): Observable<any> {
+    return this.http.post<any>(this.URL_ROOT + `/add`,reserva);
   }
 
-  deleteById(id:number) {
-    this.reservas = this.reservas.filter(r => r.id !== id);
+  updateReserva(reserva:Reserva): Observable<any> {
+    return this.http.put<any>(this.URL_ROOT + `/update`,reserva);
   }
 
-// DB quemada
-
-  ultimoId:number = 1;
-
-  reservas:Reserva[] =
-  [
-    {
-      id: 1,
-      fecha: "30-04-2025",
-      cancha: this.canchaServicio.findById(1)!,
-      pago: 100000
-    }
-  ];
+  deleteById(id:number): Observable<any> {
+    return this.http.delete<any>(this.URL_ROOT + `/delete/${id}`);
+  }
 }

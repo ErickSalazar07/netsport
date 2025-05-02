@@ -1,71 +1,38 @@
 import { Injectable } from '@angular/core';
-import { ArrendadorService } from './arrendador.service';
-import { JugadorService } from './jugador.service';
 import { Cancha } from '../model/cancha';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CanchaService {
 
+  URL_ROOT = "http://localhost:8090/cancha";
+
 // Dependencias
-  constructor(
-    private arrendadorServicio:ArrendadorService,
-    private jugadorServicio:JugadorService
-  ) { }
+  constructor(private http:HttpClient) { }
 
 // Metodos o servicios que provee la clase ArrendadorService.
 
-  findAll() {
-    return this.canchas;
+  findAll(): Observable<Cancha[]> {
+    return this.http.get<Cancha[]>(this.URL_ROOT + `/canchas`);
   }
 
-  findById(id:number) {
-    return this.canchas.find(c => c.id === id);
+  findById(id:number): Observable<Cancha> {
+    return this.http.get<Cancha>(this.URL_ROOT + `/get-cancha/${id}`);
   }
 
-  updateCancha(cancha:Cancha) {
-    let index = this.canchas.findIndex(c => c.id === cancha.id);
-    if(index !== -1)
-      this.canchas[index] = cancha;
+  addCancha(cancha:Cancha): Observable<any> {
+    return this.http.post<any>(this.URL_ROOT + `/add`,cancha);
   }
 
-  deleteById(id:number) {
-    this.canchas = this.canchas.filter(c => c.id !== id);
+  updateCancha(cancha:Cancha): Observable<any> {
+    return this.http.put<any>(this.URL_ROOT + `/update`,cancha);
   }
 
-// Base de datos quemada en el archivo.
+  deleteById(id:number): Observable<any> {
+    return this.http.delete<any>(this.URL_ROOT + `/delete/${id}`);
+  }
 
-  ultimoId:number = 3;
-
-  canchas:Cancha[] = [
-    {
-      id: 1,
-      numMaxJugadores: 10,
-      tipoCancha: "Futbol 5",
-      arrendador: this.arrendadorServicio.findById(1)!,
-      jugadores:
-      [
-        this.jugadorServicio.findById(1)!,
-        this.jugadorServicio.findById(2)!
-      ]
-    },
-    {
-      id: 2,
-      numMaxJugadores: 1,
-      tipoCancha: "Padel Solitario",
-      arrendador: this.arrendadorServicio.findById(2)!,
-      jugadores:
-      [
-        this.jugadorServicio.findById(3)!
-      ]
-    },
-    {
-      id: 3,
-      numMaxJugadores: 2,
-      tipoCancha: "Pádel",
-      arrendador: this.arrendadorServicio.findById(3)!,
-      jugadores: []
-    }
-  ];
 }

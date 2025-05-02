@@ -1,74 +1,41 @@
 import { Injectable } from '@angular/core';
 import { Jugador } from '../model/jugador';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JugadorService {
 
+  URL_ROOT = "http://localhost:8090/jugador";
+
 // Dependencias
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 // Metodos de la clase o servicios que provee.
 
-  findAll() {
-    return this.jugadores;
+  findAll(): Observable<Jugador[]> {
+    return this.http.get<Jugador[]>(this.URL_ROOT + `/jugadores`);
   }
 
-  findById(id:number) {
-    return this.jugadores.find(j => j.id === id);
+  findById(id:number): Observable<Jugador> {
+    return this.http.get<Jugador>(this.URL_ROOT + `/get-jugador/${id}`);
   }
 
-  findByUsuarioAndContrasena(user:string,pass:string) {
-    return this.jugadores.
-    find(j => j.usuario === user && j.contrasena === pass);
+  findByUsuarioAndContrasena(user:string,pass:string): Observable<Jugador> {
+    return this.http.get<Jugador>(this.URL_ROOT + `/get-jugador-usr-pass/${user}/${pass}`);
   }
 
-  updateJugador(jugador:Jugador) {
-    let index = this.jugadores.findIndex(j => j.id === jugador.id);
-    if(index !== -1)
-      this.jugadores[index] = jugador;
+  addJugador(jugador:Jugador): Observable<any> {
+    return this.http.post<any>(this.URL_ROOT + `/add`,jugador);
   }
 
-  deleteById(id:number) {
-    if(!this.jugadores || this.jugadores.length <= 0) return;
-    this.jugadores = this.jugadores.filter(j => j.id !== id);
+  updateJugador(jugador:Jugador): Observable<any> {
+    return this.http.put<any>(this.URL_ROOT + `/update`,jugador);
   }
 
-// db quemada en el archivo
-
-  ultimoId:number = 3;
-
-  jugadores:Jugador[] = [
-    {
-      id: 1,
-      nombre: "Erick Torres",
-      usuario: "erick",
-      contrasena: "123",
-      deporte: "Futbol",
-      horaDisponible: 8,
-      numPartidosGanados: 0,
-      numPartidosPerdidos: 5
-    },
-    {
-      id: 2,
-      nombre: "María López",
-      usuario: "maria",
-      contrasena: "abc",
-      deporte: "Futbol",
-      horaDisponible: 15,
-      numPartidosGanados: 20,
-      numPartidosPerdidos: 10,
-    },
-    {
-      id: 3,
-      nombre: "Carlos Ruiz",
-      usuario: "carlos",
-      contrasena: "abc",
-      deporte: "Futbol",
-      horaDisponible: 5,
-      numPartidosGanados: 3,
-      numPartidosPerdidos: 7,
-    }
-  ];
+  deleteById(id:number): Observable<any> {
+    return this.http.delete<any>(this.URL_ROOT + `/delete/${id}`);
+  }
 }

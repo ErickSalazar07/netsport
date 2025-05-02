@@ -44,6 +44,12 @@ public class ControladorArrendador {
     return arrendadorServicio.findById(id);
   }
 
+  @GetMapping("/get-arrendador-usr-pass/{usr}/{pass}")
+  public Arrendador obtenerArrendadorPorUsuarioYContrasena(@PathVariable("usr") String usuario,
+    @PathVariable("pass") String contrasena) {
+      return arrendadorServicio.findByUsuarioAndContrasena(usuario, contrasena);
+  }
+
 // PUT
 
   @PutMapping("/update")
