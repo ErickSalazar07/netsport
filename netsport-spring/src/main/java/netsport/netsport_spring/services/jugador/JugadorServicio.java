@@ -3,12 +3,12 @@ package netsport.netsport_spring.services.jugador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import io.swagger.v3.oas.annotations.servers.Server;
 import netsport.netsport_spring.models.Jugador;
 import netsport.netsport_spring.repositories.RepositorioJugador;
 
-@Server
+@Service
 public class JugadorServicio implements IJugadorServicio {
 
   @Autowired

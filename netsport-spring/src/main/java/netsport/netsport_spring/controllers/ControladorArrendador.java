@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -44,6 +46,21 @@ public class ControladorArrendador {
 
 // PUT
 
+  @PutMapping("/update")
+  public void actualizarArrendador(@RequestBody Arrendador arrendador) {
+    Arrendador arrendadorActualizar = arrendadorServicio.findById(arrendador.getId());
+    
+    arrendadorActualizar.setNombre(arrendador.getNombre());
+    arrendadorActualizar.setUsuario(arrendador.getUsuario());
+    arrendadorActualizar.setContrasena(arrendador.getContrasena());
+  
+    arrendadorServicio.updateArrendador(arrendadorActualizar);
+  }
+
 // DELETE
 
+  @DeleteMapping("/delete/{id}")
+  public void eliminarArrendador(@PathVariable("id") Long id) {
+    arrendadorServicio.deleteById(id);
+  }
 }

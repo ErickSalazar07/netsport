@@ -3,6 +3,8 @@ package netsport.netsport_spring.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,6 +37,7 @@ public class Cancha {
   @JoinColumn(nullable = false, name = "id_arrendador", referencedColumnName = "id")
   private Arrendador arrendador;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "cancha", cascade = CascadeType.ALL)
   private List<Reserva> reservas = new ArrayList<>();
 

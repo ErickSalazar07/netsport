@@ -4,6 +4,8 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -39,6 +41,7 @@ public class Jugador {
   @Column(nullable = false, name = "num_partidos_perdidos")
   private Integer numPartidosPerdidos;
 
+  @JsonIgnore
   @OneToMany(mappedBy = "jugador",cascade = CascadeType.ALL, orphanRemoval = true)
   private List<Reserva> reservas = new ArrayList<>();
 
