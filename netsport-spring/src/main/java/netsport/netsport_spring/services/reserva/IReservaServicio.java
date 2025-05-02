@@ -1,0 +1,14 @@
+package netsport.netsport_spring.services.reserva;
+
+import java.util.List;
+
+import netsport.netsport_spring.models.Reserva;
+
+public interface IReservaServicio {
+  public Reserva findById(Long id);
+  public List<Reserva> findAll();
+  public void addReserva(Reserva reserva);
+  public void udpateReserva(Reserva reserva);
+  public void deleteById(Long id);
+  public Long numReservas();
+}
