@@ -20,8 +20,8 @@ public class JugadorServicio implements IJugadorServicio {
   }
 
   @Override
-  public Jugador findByUsuarioAndContrasena(String usuario, String contrasena) {
-    return repositorioJugador.findByUsuarioAndContrasena(usuario, contrasena).orElse(null);
+  public Jugador findByUsuarioAndPassword(String usuario, String password) {
+    return repositorioJugador.findByUsuarioAndPassword(usuario, password).orElse(null);
   }
 
   @Override

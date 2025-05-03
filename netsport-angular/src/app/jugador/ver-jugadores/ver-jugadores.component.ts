@@ -16,6 +16,8 @@ export class VerJugadoresComponent {
   ) { }
 
   ngOnInit() {
-    this.jugadores = this.jugadorServicio.findAll();
+    this.jugadorServicio.findAll().subscribe(j => {
+      this.jugadores = j;
+    });
   }
 }

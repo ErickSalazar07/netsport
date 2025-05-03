@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+
 import netsport.netsport_spring.models.Arrendador;
 import netsport.netsport_spring.services.arrendador.IArrendadorServicio;
 
@@ -29,6 +30,9 @@ public class ControladorArrendador {
   @PostMapping("/add")
   public void agregarArrendador(@RequestBody Arrendador arrendador) {
     arrendador.setId(null);
+    System.out.println("\n\n\033[33mArrendador Nombre: " + arrendador.getNombre() +"\033[0m\n\n");
+    System.out.println("\n\n\033[33mArrendador Usuario: " + arrendador.getUsuario() +"\033[0m\n\n");
+    System.out.println("\n\n\033[33mArrendador Password: " + arrendador.getPassword() +"\033[0m\n\n");
     arrendadorServicio.addArrendador(arrendador);
   }
 
@@ -46,8 +50,8 @@ public class ControladorArrendador {
 
   @GetMapping("/get-arrendador-usr-pass/{usr}/{pass}")
   public Arrendador obtenerArrendadorPorUsuarioYContrasena(@PathVariable("usr") String usuario,
-    @PathVariable("pass") String contrasena) {
-      return arrendadorServicio.findByUsuarioAndContrasena(usuario, contrasena);
+    @PathVariable("pass") String password) {
+      return arrendadorServicio.findByUsuarioAndPassword(usuario, password);
   }
 
 // PUT
@@ -58,7 +62,7 @@ public class ControladorArrendador {
     
     arrendadorActualizar.setNombre(arrendador.getNombre());
     arrendadorActualizar.setUsuario(arrendador.getUsuario());
-    arrendadorActualizar.setContrasena(arrendador.getContrasena());
+    arrendadorActualizar.setPassword(arrendador.getPassword());
   
     arrendadorServicio.updateArrendador(arrendadorActualizar);
   }

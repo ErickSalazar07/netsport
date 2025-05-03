@@ -10,7 +10,7 @@ import netsport.netsport_spring.models.Arrendador;
 @Repository
 public interface RepositorioArrendador extends JpaRepository<Arrendador,Long> {
   
-  public Optional<Arrendador> findByUsuarioAndContrasena(String usuario, String contrasena);
+  public Optional<Arrendador> findByUsuarioAndPassword(String usuario, String password);
 
   public long count();
 }

@@ -6,6 +6,6 @@ export interface Arrendador {
   id:number;
   nombre:string;
   usuario:string;
-  contrasena:string;
+  password:string;
   canchas?:Cancha[];
 }

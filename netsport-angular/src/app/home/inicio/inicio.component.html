@@ -1,22 +1,81 @@
-<div class="apartados">
-  <img src="" alt="Logo Netsport">
-  <a href="">Acceder</a>
-  <a href="">Crear Cuenta</a>
-  <a href="">Experiencias</a>
-  <a href="">Que Somos</a>
-</div>
+<div class="inicio-container">
+  <!-- Header con logo y navegación -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="assets/logo-netsport.png" alt="Logo Netsport" class="logo">
+    </div>
+    <nav class="nav-links">
+      <a routerLink="/login" class="nav-link">Acceder</a>
+      <a routerLink="/registro" class="nav-link">Crear Cuenta</a>
+      <a routerLink="/experiencias" class="nav-link">Experiencias</a>
+      <a routerLink="/nosotros" class="nav-link">¿Qué Somos?</a>
+    </nav>
+  </header>
 
-<div>
-  <a href="">
-    ALQUILA TU CANCHA
-  </a>
-  <a href="">
-    FORMA EQUIPOS
-  </a>
-  <a href="">
-    ENCUENTRA PARTIDOS
-  </a>
-  <a href="">
-    ORGANIZA EVENTOS
-  </a>
+  <!-- Hero Banner (Llamado a la acción) -->
+  <section class="hero-banner">
+    <div class="hero-content">
+      <h1>Conectamos pasión y canchas</h1>
+      <p>Encuentra partidos, reserva espacios o gestiona tu negocio deportivo.</p>
+      <div class="hero-buttons">
+        <a routerLink="/registro-jugador" class="btn btn-primary">Soy Jugador</a>
+        <a routerLink="/registro-arrendador" class="btn btn-secondary">Soy Arrendador</a>
+      </div>
+    </div>
+    <img src="assets/hero-image.jpg" alt="Partido de fútbol" class="hero-image">
+  </section>
+
+  <!-- Sección de servicios -->
+  <section class="services">
+    <h2>¿Qué ofrece Netsport?</h2>
+    <div class="service-cards">
+      <div class="card">
+        <img src="assets/alquilar-icon.png" alt="Alquilar cancha">
+        <h3>ALQUILA TU CANCHA</h3>
+        <p>Arrendadores: Publica tus canchas y llega a más jugadores.</p>
+      </div>
+      <div class="card">
+        <img src="assets/equipos-icon.png" alt="Formar equipos">
+        <h3>FORMA EQUIPOS</h3>
+        <p>Encuentra compañeros para tu próximo partido.</p>
+      </div>
+      <div class="card">
+        <img src="assets/partidos-icon.png" alt="Encontrar partidos">
+        <h3>ENCUENTRA PARTIDOS</h3>
+        <p>Juega cuando quieras cerca de ti.</p>
+      </div>
+      <div class="card">
+        <img src="assets/eventos-icon.png" alt="Organizar eventos">
+        <h3>ORGANIZA EVENTOS</h3>
+        <p>Crea torneos y ligas amateur.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section class="testimonials">
+    <h2>Lo que dicen nuestros usuarios</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <img src="assets/user1.jpg" alt="Jugador satisfecho">
+        <p>"Gracias a Netsport juego cada semana sin problemas."</p>
+        <span>- Carlos, Jugador</span>
+      </div>
+      <div class="testimonial">
+        <img src="assets/user2.jpg" alt="Arrendador satisfecho">
+        <p>"Mis canchas están siempre al 100% de capacidad."</p>
+        <span>- Ana, Arrendadora</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2023 Netsport - Todos los derechos reservados</p>
+    <div class="social-links">
+      <a href="#"><img src="assets/facebook-icon.png" alt="Facebook"></a>
+      <a href="#"><img src="assets/instagram-icon.png" alt="Instagram"></a>
+      <a href="#"><img src="assets/whatsapp-icon.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
 </div>

@@ -7,7 +7,7 @@ import netsport.netsport_spring.models.Arrendador;
 public interface IArrendadorServicio {
   public Arrendador findById(Long id);
   public List<Arrendador> findAll();
-  public Arrendador findByUsuarioAndContrasena(String usuario, String contrasena);
+  public Arrendador findByUsuarioAndPassword(String usuario, String password);
   public void addArrendador(Arrendador arrendador);
   public void updateArrendador(Arrendador arrendador);
   public void deleteById(Long id);

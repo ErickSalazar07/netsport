@@ -19,6 +19,8 @@ export class PerfilJugadorComponent {
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id');
-    this.jugador = this.jugadorServicio.findById(Number(id))!;
+    this.jugadorServicio.findById(Number(id)).subscribe(j => {
+      this.jugador = j;
+    });
   }
 }

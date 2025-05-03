@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Jugador } from 'src/app/model/jugador';
 import { ArrendadorService } from 'src/app/service/arrendador.service';
 import { JugadorService } from 'src/app/service/jugador.service';
 
@@ -29,16 +30,17 @@ export class LoginComponent {
   login() {
     switch(this.tipoUsuario) {
       case "jugador": 
-        let jugador = this.jugadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena);
-        jugador !== undefined ?
-        this.router.navigate(['/jugador/perfil',jugador.id]) : alert("El usuario no existe.");
+        this.jugadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena).subscribe(j => {
+          j !== undefined ?
+          this.router.navigate(['/jugador/perfil',j.id]) : alert("El usuario no existe.");
+        });
       break;
       case "arrendador":
-        let arrendador = this.arrendadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena);
-        arrendador !== undefined ?
-        this.router.navigate(['/arrendador/perfil',arrendador.id]) : alert("El arrendador no existe.");
+        this.arrendadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena).subscribe(a => {
+          a !== undefined ?
+          this.router.navigate(['/arrendador/perfil',a.id]) : alert("El arrendador no existe.");
+        });
       break;
-
       default: alert("Error: no se reconoce el usuario con el que entro al login.");
     }
   }

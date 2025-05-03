@@ -27,7 +27,7 @@ public class Jugador {
   private String usuario;
 
   @Column(nullable = false)
-  private String contrasena;
+  private String password;
 
   @Column(nullable = false, name = "tipo_deporte")
   private String tipoDeporte;
@@ -52,7 +52,7 @@ public class Jugador {
 
     this.nombre = nombre;
     this.usuario = usuario;
-    this.contrasena = contrasena;
+    this.password = contrasena;
     this.tipoDeporte = tipoDeporte;
     this.horaDisponible = horaDisponible;
     this.numPartidosGanados = numPartidosGanados;
@@ -66,8 +66,8 @@ public class Jugador {
   public void setNombre(String nombre) { this.nombre = nombre; }
   public String getUsuario() { return usuario; }
   public void setUsuario(String usuario) { this.usuario = usuario; }
-  public String getContrasena() { return contrasena; }
-  public void setContrasena(String contrasena) { this.contrasena = contrasena; }
+  public String getPassword() { return password; }
+  public void setPassword(String contrasena) { this.password = contrasena; }
   public String getTipoDeporte() { return tipoDeporte; }
   public void setTipoDeporte(String tipoDeporte) { this.tipoDeporte = tipoDeporte; }
   public LocalTime getHoraDisponible() { return horaDisponible; }

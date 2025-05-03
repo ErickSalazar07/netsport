@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component } from '@angular/core';
 import { Arrendador } from 'src/app/model/arrendador';
 import { ArrendadorService } from 'src/app/service/arrendador.service';
@@ -13,15 +14,17 @@ export class AgregarArrendadorComponent {
     id: -1,
     nombre: "",
     usuario: "",
-    contrasena: ""
+    password: ""
   };
 
   constructor(
-    private arrendadorServicio:ArrendadorService
+    private arrendadorServicio:ArrendadorService,
+    private location:Location
   ) { }
 
   submitArrendador() {
-    this.arrendadorServicio.addArrendador(this.arrendador);
-    console.log(this.arrendadorServicio.findAll());
+    this.arrendadorServicio.addArrendador(this.arrendador).subscribe({
+      complete: () => this.location.back()
+    });
   }
 }

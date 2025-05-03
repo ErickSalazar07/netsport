@@ -25,8 +25,8 @@ public class ArrendadorServicio implements IArrendadorServicio {
   }
 
   @Override
-  public Arrendador findByUsuarioAndContrasena(String usuario, String contrasena) {
-    return repositorioArrendador.findByUsuarioAndContrasena(usuario, contrasena).orElse(null);
+  public Arrendador findByUsuarioAndPassword(String usuario, String password) {
+    return repositorioArrendador.findByUsuarioAndPassword(usuario, password).orElse(null);
   }
 
   @Override

@@ -6,7 +6,7 @@ import netsport.netsport_spring.models.Jugador;
 
 public interface IJugadorServicio {
   public Jugador findById(Long id);
-  public Jugador findByUsuarioAndContrasena(String usuario, String contrasena);
+  public Jugador findByUsuarioAndPassword(String usuario, String password);
   public List<Jugador> findAll();
   public void addJugador(Jugador jugador);
   public void updateJugador(Jugador jugador);

@@ -26,7 +26,7 @@ public class Arrendador {
   private String usuario;
   
   @Column(nullable = false)
-  private String contrasena;
+  private String password;
 
   @JsonIgnore
   @OneToMany(mappedBy = "arrendador", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -37,7 +37,7 @@ public class Arrendador {
   public Arrendador(String nombre, String usuario, String contrasena) {
     this.nombre = nombre;
     this.usuario = usuario;
-    this.contrasena = contrasena;
+    this.password = contrasena;
   }
 
   public Long getId() { return id; }
@@ -46,8 +46,8 @@ public class Arrendador {
   public void setNombre(String nombre) { this.nombre = nombre; }
   public String getUsuario() { return usuario; }
   public void setUsuario(String usuario) { this.usuario = usuario; }
-  public String getContrasena() { return contrasena; }
-  public void setContrasena(String contrasena) { this.contrasena = contrasena; }
+  public String getPassword() { return password; }
+  public void setPassword(String contrasena) { this.password = contrasena; }
   public List<Cancha> getCanchas() { return canchas; }
   public void setCanchas(List<Cancha> canchas) { this.canchas = canchas; }
 

@@ -10,7 +10,7 @@ import netsport.netsport_spring.models.Jugador;
 @Repository
 public interface RepositorioJugador extends JpaRepository<Jugador,Long> {
 
-  public Optional<Jugador> findByUsuarioAndContrasena(String usuario, String contrasena);
+  public Optional<Jugador> findByUsuarioAndPassword(String usuario, String password);
 
   public long count();
 }

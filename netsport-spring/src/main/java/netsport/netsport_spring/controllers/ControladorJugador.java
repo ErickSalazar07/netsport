@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import netsport.netsport_spring.models.Jugador;
 import netsport.netsport_spring.services.jugador.IJugadorServicio;
 
@@ -46,9 +46,9 @@ public class ControladorJugador {
 
   @GetMapping("/get-jugador-usr-pass/{usr}/{pass}")
   public Jugador obtenerJugadorPorUsuarioYContrasena(@PathVariable("usr") String usuario,
-    @PathVariable("pass") String contrasena) {
+    @PathVariable("pass") String password) {
 
-    return jugadorServicio.findByUsuarioAndContrasena(usuario, contrasena);
+    return jugadorServicio.findByUsuarioAndPassword(usuario, password);
   }
 
 // PUT
@@ -59,7 +59,7 @@ public class ControladorJugador {
 
     jugadorActualizar.setNombre(jugador.getNombre());
     jugadorActualizar.setUsuario(jugador.getUsuario());
-    jugadorActualizar.setContrasena(jugador.getContrasena());
+    jugadorActualizar.setPassword(jugador.getPassword());
     jugadorActualizar.setHoraDisponible(jugador.getHoraDisponible());
     jugadorActualizar.setNumPartidosGanados(jugador.getNumPartidosGanados());
     jugadorActualizar.setNumPartidosPerdidos(jugador.getNumPartidosPerdidos());
