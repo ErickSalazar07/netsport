@@ -6,7 +6,7 @@
     </div>
     <nav class="nav-links">
       <a routerLink="/login" class="nav-link">Acceder</a>
-      <a routerLink="/registro" class="nav-link">Crear Cuenta</a>
+      <a [routerLink]="['/seleccionar-usuario']" class="nav-link">Crear Cuenta</a>
       <a routerLink="/experiencias" class="nav-link">Experiencias</a>
       <a routerLink="/nosotros" class="nav-link">¿Qué Somos?</a>
     </nav>
@@ -18,8 +18,8 @@
       <h1>Conectamos pasión y canchas</h1>
       <p>Encuentra partidos, reserva espacios o gestiona tu negocio deportivo.</p>
       <div class="hero-buttons">
-        <a routerLink="/registro-jugador" class="btn btn-primary">Soy Jugador</a>
-        <a routerLink="/registro-arrendador" class="btn btn-secondary">Soy Arrendador</a>
+        <a [routerLink]="['/login','jugador']" class="btn btn-primary">Soy Jugador</a>
+        <a [routerLink]="['/login','arrendador']" class="btn btn-secondary">Soy Arrendador</a>
       </div>
     </div>
     <img src="assets/hero-image.jpg" alt="Partido de fútbol" class="hero-image">
