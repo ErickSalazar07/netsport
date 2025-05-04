@@ -10,7 +10,8 @@ import { ArrendadorService } from 'src/app/service/arrendador.service';
 })
 export class AgregarArrendadorComponent {
 
-  msgError!:string;
+  msgError:string = "";
+  msgExito:string = "";
 
   arrendador:Arrendador = {
     id: -1,
@@ -26,12 +27,13 @@ export class AgregarArrendadorComponent {
 
   submitArrendador() {
     if(this.arrendador.nombre == "" || this.arrendador.usuario == "" || this.arrendador.password == "") {
-      this.msgError = "Error: Debe llenar todos los campos";
+      this.msgError = "Error: Debe llenar todos los campos.";
       return;
     }
 
     this.arrendadorServicio.addArrendador(this.arrendador).subscribe({
-      complete: () => this.location.back()
+      complete: () => this.location.back(),
+      error: () => this.msgError = "Ocurrio un error al agregar el arrendador."
     });
   }
 }

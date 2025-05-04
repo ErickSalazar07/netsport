@@ -1,1 +1,62 @@
-<p>agregar-jugador works!</p>
+<div class="form-container">
+  <div class="form-header">
+    <h2>Crear cuenta de Jugador</h2>
+    <p>Únete a la comunidad y encuentra tu próximo partido</p>
+  </div>
+
+  <form>
+    <div class="form-group">
+      <label for="txtNombre"><i class="fas fa-user"></i> Nombre</label>
+      <input type="text" id="txtNombre" required [(ngModel)]="jugador.nombre" name="nombre" placeholder="Ej: María Gómez">
+    </div>
+
+    <div class="form-group">
+      <label for="txtUsuario"><i class="fas fa-id-badge"></i> Usuario</label>
+      <input type="text" id="txtUsuario" required [(ngModel)]="jugador.usuario" name="usuario" placeholder="Ej: maria_g123">
+    </div>
+
+    <div class="form-group">
+      <label for="txtPassword"><i class="fas fa-lock"></i> Contraseña</label>
+      <input type="password" id="txtPassword" required [(ngModel)]="jugador.password" name="password" placeholder="********">
+    </div>
+
+    <div class="form-group">
+      <label for="selectDeporte"><i class="fas fa-futbol"></i> Deporte</label>
+      <select id="selectDeporte" required [(ngModel)]="jugador.tipoDeporte" name="deporte">
+        <option value="" disabled selected>Selecciona un deporte</option>
+        <option value="Fútbol">Fútbol</option>
+        <option value="Pádel">Pádel</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="horaDisponible"><i class="fas fa-clock"></i> Horario preferido</label>
+      <input
+        type="time"
+        id="horaDisponible"
+        [(ngModel)]="jugador.horaDisponible"
+        name="horaDisponible"
+        required
+        class="form-control"
+        step="60"
+        min="07:00"
+        max="22:00"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="partidosGanados"><i class="fas fa-trophy"></i> Partidos ganados</label>
+      <input type="number" id="partidosGanados" [(ngModel)]="jugador.numPartidosGanados" name="numPartidosGanados" min="0" placeholder="Ej: 5">
+    </div>
+
+    <div class="form-group">
+      <label for="partidosPerdidos"><i class="fas fa-times-circle"></i> Partidos perdidos</label>
+      <input type="number" id="partidosPerdidos" [(ngModel)]="jugador.numPartidosPerdidos" name="numPartidosPerdidos" min="0" placeholder="Ej: 3">
+    </div>
+
+    <button type="button" (click)="submitJugador()">Agregar Jugador</button>
+
+    <div *ngIf="msgError" class="error-msg">{{ msgError }}</div>
+  </form>
+</div>
+

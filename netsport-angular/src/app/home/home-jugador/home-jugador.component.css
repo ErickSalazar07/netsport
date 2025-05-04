@@ -3,20 +3,20 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background-color: #f0f7ff;
+  background-color: #eafaf1; /* verde muy claro */
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
 .inicio-jugador h2 {
   font-size: 2.5rem;
-  color: #1c3d5a;
+  color: #2e7d32; /* verde más oscuro */
   margin-bottom: 1.5rem;
 }
 
 .descripcion-jugador h3 {
   font-size: 1.8rem;
-  color: #2d5d8c;
+  color: #388e3c; /* verde intermedio */
   margin-top: 2rem;
 }
 
@@ -43,19 +43,20 @@
 }
 
 .btn-primario {
-  background-color: #3498db;
+  background-color: gray; 
   color: white;
 }
 
 .btn-primario:hover {
-  background-color: #2980b9;
+  background-color: #afafaf; 
 }
 
 .btn-secundario {
-  background-color: #2ecc71;
+  background-color: #4380f0; 
   color: white;
 }
 
 .btn-secundario:hover {
-  background-color: #27ae60;
+  background-color: #42a5f5; /* azul medio */
 }
+

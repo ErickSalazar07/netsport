@@ -1,0 +1,82 @@
+/* Fondo dinámico */
+.fondo-verde {
+  background-color: #d0f0d0; /* verde claro */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fondo-azul {
+  background-color: #d0e8ff; /* azul claro */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo del contenedor */
+.login-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  width: 320px;
+  text-align: center;
+}
+
+/* Icono de usuario */
+.user-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background-image: url('/assets/user-icon.svg'); /* usa un ícono SVG genérico */
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 4px solid;
+}
+
+.user-icon.jugador {
+  border-color: #4caf50; /* verde */
+}
+
+.user-icon.arrendador {
+  border-color: #2196f3; /* azul */
+}
+
+/* Inputs y botón */
+form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+form button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.6rem;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form button:hover {
+  background-color: #555;
+}
+.user-icon {
+  background-image: url('https://cdn-icons-png.flaticon.com/512/847/847969.png');
+}

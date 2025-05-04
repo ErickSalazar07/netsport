@@ -30,9 +30,6 @@ public class ControladorArrendador {
   @PostMapping("/add")
   public void agregarArrendador(@RequestBody Arrendador arrendador) {
     arrendador.setId(null);
-    System.out.println("\n\n\033[33mArrendador Nombre: " + arrendador.getNombre() +"\033[0m\n\n");
-    System.out.println("\n\n\033[33mArrendador Usuario: " + arrendador.getUsuario() +"\033[0m\n\n");
-    System.out.println("\n\n\033[33mArrendador Password: " + arrendador.getPassword() +"\033[0m\n\n");
     arrendadorServicio.addArrendador(arrendador);
   }
 

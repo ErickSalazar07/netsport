@@ -1,8 +1,13 @@
-<h1>Login</h1>
-<form>
-  <label for="txt-usuario">Usuario</label>
-  <input type="text" id="txt-usuario" [(ngModel)]="txtUsuario" name="usuario">
-  <label for="txt-constrasena">Contraseña</label>
-  <input type="password" id="txt-constrasena" [(ngModel)]="txtContrasena" name="contrasena">
-  <button (click)="login()">Ingresar</button>
-</form>
+<div [ngClass]="tipoUsuario === 'jugador' ? 'fondo-verde' : 'fondo-azul'" class="login-wrapper">
+  <div class="login-card">
+    <div class="user-icon" [ngClass]="tipoUsuario"></div>
+    <h1>{{"Login " + (tipoUsuario === 'jugador' ? 'Jugador' : 'Arrendador') }}</h1>
+    <form>
+      <label for="txt-usuario">Usuario</label>
+      <input type="text" id="txt-usuario" [(ngModel)]="txtUsuario" name="usuario" required>
+      <label for="txt-constrasena">Contraseña</label>
+      <input type="password" id="txt-constrasena" [(ngModel)]="txtContrasena" name="contrasena" required>
+      <button type="button" (click)="login()">Ingresar</button>
+    </form>
+  </div>
+</div>

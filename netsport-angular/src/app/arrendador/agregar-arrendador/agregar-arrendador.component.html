@@ -1,15 +1,27 @@
-<h1>Agregar Arrendador</h1>
-<form action="post">
+<div class="form-container">
+  <div class="form-header">
+    <h2>Crear cuenta de Arrendador</h2>
+    <p>Conecta con deportistas y ofrece tus espacios</p>
+  </div>
 
-  <label for="txtNombre">Nombre</label>
-  <input type="text" id="txtNombre" required [(ngModel)]="arrendador.nombre" name="nombre">
+  <form action="post">
+    <div class="form-group">
+      <label for="txtNombre"><i class="fas fa-user"></i> Nombre</label>
+      <input type="text" id="txtNombre" required [(ngModel)]="arrendador.nombre" name="nombre" placeholder="Ej: Juan Pérez">
+    </div>
 
-  <label for="txtUsuario">Usuario</label>
-  <input type="text" id="txtUsuario" required [(ngModel)]="arrendador.usuario" name="usuario">
+    <div class="form-group">
+      <label for="txtUsuario"><i class="fas fa-id-badge"></i> Usuario</label>
+      <input type="text" id="txtUsuario" required [(ngModel)]="arrendador.usuario" name="usuario" placeholder="Ej: juan123">
+    </div>
 
-  <label for="txtPassword">Contraseña</label>
-  <input type="text" id="txtPassword" required [(ngModel)]="arrendador.password" name="password">
+    <div class="form-group">
+      <label for="txtPassword"><i class="fas fa-lock"></i> Contraseña</label>
+      <input type="password" id="txtPassword" required [(ngModel)]="arrendador.password" name="password" placeholder="********">
+    </div>
 
-  <button (click)="submitArrendador()">Agregar</button>
-  <div *ngIf="msgError != ''" class="error-msg">{{msgError}}</div>
-</form>
+    <button type="button" (click)="submitArrendador()">Agregar Arrendador</button>
+
+    <div *ngIf="msgError" class="error-msg">{{ msgError }}</div>
+  </form>
+</div>
