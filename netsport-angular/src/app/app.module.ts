@@ -20,6 +20,7 @@ import { InicioComponent } from './home/inicio/inicio.component';
 import { HomeArrendadorComponent } from './home/home-arrendador/home-arrendador.component';
 import { HomeJugadorComponent } from './home/home-jugador/home-jugador.component';
 import { VerReservaComponent } from './reserva/ver-reserva/ver-reserva.component';
+import { FooterComponent } from './home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { VerReservaComponent } from './reserva/ver-reserva/ver-reserva.component
     HomeArrendadorComponent,
     HomeJugadorComponent,
     VerReservaComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

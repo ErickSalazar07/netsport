@@ -1,0 +1,81 @@
+.inicio-arrendador {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.inicio-arrendador h2 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+}
+
+.descripcion-arrendador h3 {
+  font-size: 1.8rem;
+  color: #34495e;
+  margin-top: 2rem;
+}
+
+.descripcion-arrendador ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.descripcion-arrendador ul li {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #555;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.descripcion-arrendador ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #2ecc71;
+}
+
+.descripcion-arrendador p {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 1rem 0 2rem;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primario {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #27ae60;
+}
+
+.btn-secundario {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-secundario:hover {
+  background-color: #2980b9;
+}

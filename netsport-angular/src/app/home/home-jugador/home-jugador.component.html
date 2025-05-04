@@ -1,1 +1,20 @@
-<p>home-jugador works!</p>
+<section class="inicio-jugador">
+  <h2>¡Bienvenido, jugador!</h2>
+
+  <div class="descripcion-jugador">
+    <h3>¿Qué puedes hacer aquí?</h3>
+    <p>
+      Conecta con otros jugadores, arma equipos, reserva canchas y disfruta de partidas emocionantes en tu ciudad.
+    </p>
+
+    <h3>¿Cómo puedes hacerlo?</h3>
+    <p>
+      Solo necesitas registrarte o iniciar sesión. En pocos pasos estarás listo para jugar, mejorar tus habilidades y vivir la experiencia Netsport.
+    </p>
+
+    <div class="botones">
+      <a [routerLink]="['/jugador/agregar-jugador']" class="btn btn-primario">Crea una cuenta</a>
+      <a [routerLink]="['/login','jugador']" class="btn btn-secundario">Inicia sesión</a>
+    </div>
+  </div>
+</section>

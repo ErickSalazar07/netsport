@@ -1,0 +1,61 @@
+.inicio-jugador {
+  padding: 3rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #f0f7ff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+.inicio-jugador h2 {
+  font-size: 2.5rem;
+  color: #1c3d5a;
+  margin-bottom: 1.5rem;
+}
+
+.descripcion-jugador h3 {
+  font-size: 1.8rem;
+  color: #2d5d8c;
+  margin-top: 2rem;
+}
+
+.descripcion-jugador p {
+  font-size: 1.1rem;
+  color: #444;
+  margin: 1rem 0;
+}
+
+.botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn-primario {
+  background-color: #3498db;
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #2980b9;
+}
+
+.btn-secundario {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.btn-secundario:hover {
+  background-color: #27ae60;
+}

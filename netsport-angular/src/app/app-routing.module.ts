@@ -7,10 +7,14 @@ import { SeleccionarUsuarioComponent } from './home/seleccionar-usuario/seleccio
 import { VerJugadoresComponent } from './jugador/ver-jugadores/ver-jugadores.component';
 import { AgregarArrendadorComponent } from './arrendador/agregar-arrendador/agregar-arrendador.component';
 import { InicioComponent } from './home/inicio/inicio.component';
+import { HomeJugadorComponent } from './home/home-jugador/home-jugador.component';
+import { HomeArrendadorComponent } from './home/home-arrendador/home-arrendador.component';
 
 const routes: Routes =
 [
-  {path: '', component: InicioComponent},
+  {path: "", component: InicioComponent},
+  {path: "home/inicio-jugador", component: HomeJugadorComponent},
+  {path: "home/inicio-arrendador", component: HomeArrendadorComponent},
   {path: "jugador/perfil/:id", component: PerfilJugadorComponent},
   {path: "jugador/ver-jugadores", component: VerJugadoresComponent},
   {path: "arrendador/perfil/:id", component: PerfilArrendadorComponent},
