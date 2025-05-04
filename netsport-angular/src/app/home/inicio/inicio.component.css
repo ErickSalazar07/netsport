@@ -32,7 +32,8 @@ body, html {
 }
 
 .logo {
-  height: 50px;
+  height: 70px;
+  border-radius: 8px;
 }
 
 .nav-links {

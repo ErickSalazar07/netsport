@@ -1,0 +1,42 @@
+.footer {
+  background-color: #1f2937; /* gris oscuro pero no negro */
+  color: #e6edf3;
+  padding: 30px 20px;
+  text-align: center;
+  border-top: 3px solid #00bfa5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+}
+
+.footer p {
+  margin: 0;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #374151; /* más claro que el fondo */
+  border-radius: 12px; /* bordes más suaves, no tan redondos */
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+  background-color: #00bfa5;
+  transform: scale(1.08);
+}
+
+.social-links img {
+  width: 24px;
+  height: 24px;
+  border-radius: 7px;
+}
