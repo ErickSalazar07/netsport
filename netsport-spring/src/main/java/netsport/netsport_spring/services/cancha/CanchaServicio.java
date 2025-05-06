@@ -25,6 +25,11 @@ public class CanchaServicio implements ICanchaServicio {
   }
 
   @Override
+  public List<Cancha> findByArrendadorId(Long idArrendador) {
+    return repositorioCancha.findByArrendadorId(idArrendador);
+  }
+
+  @Override
   public void addCancha(Cancha cancha) {
     repositorioCancha.save(cancha);
   }
@@ -43,5 +48,9 @@ public class CanchaServicio implements ICanchaServicio {
   public Long numCanchas() {
     return repositorioCancha.count();
   }
-  
+
+  @Override
+  public Long numCanchasByArrendadorId(Long arrendadorId) {
+    return repositorioCancha.countByArrendadorId(arrendadorId);
+  }
 }

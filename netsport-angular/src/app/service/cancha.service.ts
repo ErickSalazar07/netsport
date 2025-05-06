@@ -23,6 +23,14 @@ export class CanchaService {
     return this.http.get<Cancha>(this.URL_ROOT + `/get-cancha/${id}`);
   }
 
+  findByArrendadorId(idArrendador:number): Observable<Cancha[]> {
+    return this.http.get<Cancha[]>(this.URL_ROOT + `/canchas-arrendador/${idArrendador}`);
+  }
+
+  numCanchasByArrendadorId(idArrendador:number): Observable<number> {
+    return this.http.get<number>(this.URL_ROOT + `/get-num-canchas-arrendador/${idArrendador}`);
+  }
+
   addCancha(cancha:Cancha): Observable<any> {
     return this.http.post<any>(this.URL_ROOT + `/add`,cancha);
   }

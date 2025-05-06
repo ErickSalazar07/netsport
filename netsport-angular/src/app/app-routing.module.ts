@@ -10,6 +10,9 @@ import { InicioComponent } from './home/inicio/inicio.component';
 import { HomeJugadorComponent } from './home/home-jugador/home-jugador.component';
 import { HomeArrendadorComponent } from './home/home-arrendador/home-arrendador.component';
 import { AgregarJugadorComponent } from './jugador/agregar-jugador/agregar-jugador.component';
+import { DashboardArrendadorComponent } from './arrendador/dashboard-arrendador/dashboard-arrendador.component';
+import { VerCanchasArrendadorComponent } from './cancha/ver-canchas-arrendador/ver-canchas-arrendador.component';
+import { AgregarCanchaComponent } from './cancha/agregar-cancha/agregar-cancha.component';
 
 const routes: Routes =
 [
@@ -21,8 +24,16 @@ const routes: Routes =
   {path: "jugador/perfil/:id", component: PerfilJugadorComponent},
   {path: "jugador/ver-jugadores", component: VerJugadoresComponent},
   {path: "jugador/agregar-jugador", component: AgregarJugadorComponent},
-  {path: "arrendador/perfil/:id", component: PerfilArrendadorComponent},
   {path: "arrendador/agregar-arrendador", component: AgregarArrendadorComponent},
+  {path: "arrendador/dashboard/:id", component: DashboardArrendadorComponent,
+    children:
+    [
+      {path: "perfil/:id", component: PerfilArrendadorComponent},
+      {path: "canchas/:id", component: VerCanchasArrendadorComponent},
+      {path: "", redirectTo: "home/inicio-arrendador", pathMatch: "full"}
+    ]
+  },
+  {path: "cancha/agregar-cancha/:idArrendador", component: AgregarCanchaComponent}
 ];
 
 @NgModule({

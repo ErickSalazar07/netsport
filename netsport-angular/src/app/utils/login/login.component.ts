@@ -32,13 +32,15 @@ export class LoginComponent {
       case "jugador": 
         this.jugadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena).subscribe(j => {
           j !== undefined ?
-          this.router.navigate(['/jugador/perfil',j.id]) : alert("El usuario no existe.");
+          this.router.navigate([`/jugador/perfil`]) :
+          alert("El usuario no existe.");
         });
       break;
       case "arrendador":
         this.arrendadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena).subscribe(a => {
           a !== undefined ?
-          this.router.navigate(['/arrendador/perfil',a.id]) : alert("El arrendador no existe.");
+          this.router.navigate([`/arrendador/dashboard/${a.id}/perfil/${a.id}`]) :
+          alert("El arrendador no existe.");
         });
       break;
       default: alert("Error: no se reconoce el usuario con el que entro al login.");

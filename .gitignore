@@ -1,7 +1,8 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # DB files
-mydatabase.mv.db
+*.mv.db
+*.trace.db
 
 # Compiled output
 /dist
@@ -78,3 +79,4 @@ build/
 .vscode/
 
 netsport-angular/.angular/cache/
+@fortawesome

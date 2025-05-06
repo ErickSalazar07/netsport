@@ -8,7 +8,7 @@ public interface IReservaServicio {
   public Reserva findById(Long id);
   public List<Reserva> findAll();
   public void addReserva(Reserva reserva);
-  public void udpateReserva(Reserva reserva);
+  public void updateReserva(Reserva reserva);
   public void deleteById(Long id);
   public Long numReservas();
 }

@@ -55,7 +55,7 @@ public class ControladorReserva {
     reservaActualizar.setHoraSalida(reserva.getHoraSalida());
     reservaActualizar.setValorPagar(reserva.getValorPagar());
 
-    reservaServicio.udpateReserva(reservaActualizar);
+    reservaServicio.updateReserva(reservaActualizar);
   }
 
 // DELETE

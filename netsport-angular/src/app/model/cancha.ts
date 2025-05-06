@@ -1,10 +1,12 @@
 import { Arrendador } from "./arrendador";
-import { Jugador } from "./jugador";
+import { Reserva } from "./reserva";
 
 export interface Cancha {
   id:number;
-  numMaxJugadores:number;
   tipoCancha:string;
+  numMaxJugadores:number;
+  direccion:string;
+  disponible:boolean;
   arrendador:Arrendador;
-  jugadores:Jugador[]; // Debe ser una lista de a lo mucho numMaxJugadores
+  reservas?:Reserva[];
 }

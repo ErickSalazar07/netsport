@@ -1,1 +1,13 @@
-<p>perfil-arrendador works!</p>
+<div class="perfil-arrendador-container">
+  <h2><span class="material-icons icono">account_circle</span></h2>
+
+  <div class="perfil-arrendador-card">
+    <img class="foto-arrendador" src="assets/arrendadores/arrendador2.png" alt="Foto Arrendador">
+    
+    <div class="info-arrendador">
+      <p><span class="material-icons">person</span> <strong>Nombre:</strong> {{ arrendador.nombre }}</p>
+      <p><span class="material-icons">badge</span> <strong>Usuario:</strong> {{ arrendador.usuario }}</p>
+      <p><span class="material-icons">sports_soccer</span> <strong>Canchas registradas:</strong> {{ numCanchas }}</p>
+    </div>
+  </div>
+</div>

@@ -42,6 +42,16 @@ public class ControladorCancha {
   public Cancha obtenerCancha(@PathVariable("id") Long id) {
     return canchaServicio.findById(id);
   }
+  
+  @GetMapping("/canchas-arrendador/{idArrendador}")
+  public List<Cancha> obtenerCanchasByArrendadorId(@PathVariable("idArrendador") Long idArrendador) {
+    return canchaServicio.findByArrendadorId(idArrendador);
+  }
+
+  @GetMapping("/get-num-canchas-arrendador/{idArrendador}")
+  public Long obtenerNumCanchasPorArrendadorId(@PathVariable("idArrendador") Long idArrendador) {
+    return canchaServicio.numCanchasByArrendadorId(idArrendador);
+  }
 
 // PUT
 

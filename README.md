@@ -24,7 +24,17 @@ sudo apt install node
 npm install -g @angular/cli@16
 ```
 
-#### Ejecutar el proyecto
+#### Ejecutar el proyecto Angular
+
+Posicionarse en la carpeta `netsport-angular` y ejecutar.
 ```bash
+npm install
 ng serve
+```
+
+#### Ejecutar el proyecto Spring-Boot
+
+Posicionarse en la carpeta `netsport-spring` y ejecutar.
+```bash
+mvn spring-boot:run
 ```

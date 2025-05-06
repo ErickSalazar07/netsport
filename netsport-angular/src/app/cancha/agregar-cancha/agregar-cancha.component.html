@@ -1,1 +1,51 @@
-<p>agregar-cancha works!</p>
+<section class="contenedor-agregar-cancha">
+  <h1><i class="fas fa-futbol"></i> Registrar Cancha</h1>
+
+  <form (ngSubmit)="submitCancha()" #canchaForm="ngForm" novalidate>
+    <div class="form-group">
+      <label for="txtDireccion"><i class="fas fa-map-marker-alt"></i> Dirección</label>
+      <input
+        id="txtDireccion"
+        type="text"
+        required
+        [(ngModel)]="cancha.direccion"
+        name="direccion"
+        placeholder="Ej: Calle 123, Ciudad"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="txtNumMaxJugadores"><i class="fas fa-users"></i> Máximo jugadores</label>
+      <input
+        id="txtNumMaxJugadores"
+        type="number"
+        required
+        [(ngModel)]="cancha.numMaxJugadores"
+        name="numMaxJugadores"
+        placeholder="Ej: 10"
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="selectTipoCancha"><i class="fas fa-th-large"></i> Tipo de cancha</label>
+      <select
+        id="selectTipoCancha"
+        required
+        [(ngModel)]="cancha.tipoCancha"
+        name="tipoCancha"
+      >
+        <option value="" disabled selected>Selecciona un tipo</option>
+        <option value="Fútbol">Fútbol</option>
+        <option value="Pádel">Pádel</option>
+      </select>
+    </div>
+
+    <div *ngIf="msgError" class="error-msg">
+      <i class="fas fa-exclamation-triangle"></i> {{ msgError }}
+    </div>
+
+    <button type="submit" class="btn-registrar">
+      <i class="fas fa-save"></i> Registrar Cancha
+    </button>
+  </form>
+</section>

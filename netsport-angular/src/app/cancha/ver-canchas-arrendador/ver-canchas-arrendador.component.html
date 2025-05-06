@@ -1,0 +1,24 @@
+<section class="ver-canchas-arrendador">
+  <div class="header">
+    <h2>Mis Canchas</h2>
+    <a [routerLink]="['/cancha/agregar-cancha',idArrendador]" class="btn-registrar">
+      <i class="fas fa-plus-circle"></i> Registrar cancha
+    </a>
+  </div>
+
+  <div *ngIf="canchas.length > 0; else sinCanchas" class="canchas-grid">
+    <div class="tarjeta-cancha" *ngFor="let cancha of canchas">
+      <h3>{{cancha.tipoCancha}}</h3>
+      <p><strong>Dirección:</strong> {{cancha.direccion}}</p>
+      <p><strong>Máximo jugadores:</strong> {{cancha.numMaxJugadores}}</p>
+      <p><strong>Agendada:</strong> {{cancha.disponible ? "Sí" : "No"}}</p>
+    </div>
+  </div>
+
+  <ng-template #sinCanchas>
+    <div class="mensaje-vacio">
+      <i class="fas fa-frown"></i>
+      <p>No tienes canchas registradas aún.</p>
+    </div>
+  </ng-template>
+</section>

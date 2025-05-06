@@ -21,6 +21,8 @@ import { HomeArrendadorComponent } from './home/home-arrendador/home-arrendador.
 import { HomeJugadorComponent } from './home/home-jugador/home-jugador.component';
 import { VerReservaComponent } from './reserva/ver-reserva/ver-reserva.component';
 import { FooterComponent } from './home/footer/footer.component';
+import { VerCanchasArrendadorComponent } from './cancha/ver-canchas-arrendador/ver-canchas-arrendador.component';
+import { DashboardArrendadorComponent } from './arrendador/dashboard-arrendador/dashboard-arrendador.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { FooterComponent } from './home/footer/footer.component';
     HomeJugadorComponent,
     VerReservaComponent,
     FooterComponent,
+    VerCanchasArrendadorComponent,
+    DashboardArrendadorComponent,
   ],
   imports: [
     BrowserModule,

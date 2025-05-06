@@ -30,7 +30,7 @@ public class ReservaServicio implements IReservaServicio {
   }
 
   @Override
-  public void udpateReserva(Reserva reserva) {
+  public void updateReserva(Reserva reserva) {
     repositorioReserva.save(reserva);
   }
 

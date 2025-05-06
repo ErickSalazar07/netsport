@@ -1,0 +1,65 @@
+.ver-canchas-arrendador {
+  padding: 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.btn-registrar {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.btn-registrar:hover {
+  background-color: #0056b3;
+}
+
+.canchas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-cancha {
+  background-color: #f0f8ff;
+  border: 1px solid #cce5ff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out;
+}
+
+.tarjeta-cancha:hover {
+  transform: scale(1.02);
+}
+
+.tarjeta-cancha h3 {
+  margin-top: 0;
+  color: #0056b3;
+}
+
+.mensaje-vacio {
+  text-align: center;
+  color: #888;
+  font-size: 1.2rem;
+  padding: 50px;
+}
+
+.mensaje-vacio i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
