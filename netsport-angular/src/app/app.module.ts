@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { PerfilJugadorComponent } from './jugador/perfil-jugador/perfil-jugador.component';
 import { PerfilArrendadorComponent } from './arrendador/perfil-arrendador/perfil-arrendador.component';
 import { LoginComponent } from './utils/login/login.component';
-import { SeleccionarUsuarioComponent } from './home/seleccionar-usuario/seleccionar-usuario.component';
-import { AsignarCanchaComponent } from './cancha/asignar-cancha/asignar-cancha.component';
 import { AgregarCanchaComponent } from './cancha/agregar-cancha/agregar-cancha.component';
 import { VerCanchasComponent } from './cancha/ver-canchas/ver-canchas.component';
 import { VerJugadoresComponent } from './jugador/ver-jugadores/ver-jugadores.component';
@@ -23,6 +21,10 @@ import { VerReservaComponent } from './reserva/ver-reserva/ver-reserva.component
 import { FooterComponent } from './home/footer/footer.component';
 import { VerCanchasArrendadorComponent } from './cancha/ver-canchas-arrendador/ver-canchas-arrendador.component';
 import { DashboardArrendadorComponent } from './arrendador/dashboard-arrendador/dashboard-arrendador.component';
+import { VerReservasArrendadorComponent } from './reserva/ver-reservas-arrendador/ver-reservas-arrendador.component';
+import { VerReservasJugadorComponent } from './reserva/ver-reservas-jugador/ver-reservas-jugador.component';
+import { DashboardJugadorComponent } from './jugador/dashboard-jugador/dashboard-jugador.component';
+import { AgregarReservaComponent } from './reserva/agregar-reserva/agregar-reserva.component';
 
 @NgModule({
   declarations: [
@@ -30,8 +32,6 @@ import { DashboardArrendadorComponent } from './arrendador/dashboard-arrendador/
     PerfilJugadorComponent,
     PerfilArrendadorComponent,
     LoginComponent,
-    SeleccionarUsuarioComponent,
-    AsignarCanchaComponent,
     AgregarCanchaComponent,
     VerCanchasComponent,
     VerJugadoresComponent,
@@ -45,6 +45,10 @@ import { DashboardArrendadorComponent } from './arrendador/dashboard-arrendador/
     FooterComponent,
     VerCanchasArrendadorComponent,
     DashboardArrendadorComponent,
+    VerReservasArrendadorComponent,
+    VerReservasJugadorComponent,
+    DashboardJugadorComponent,
+    AgregarReservaComponent,
   ],
   imports: [
     BrowserModule,

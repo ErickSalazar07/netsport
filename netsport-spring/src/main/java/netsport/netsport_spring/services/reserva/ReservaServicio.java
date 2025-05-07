@@ -25,6 +25,11 @@ public class ReservaServicio implements IReservaServicio {
   }
 
   @Override
+  public List<Reserva> findByCanchaArrendadorId(Long idArrendador) {
+    return repositorioReserva.findByCanchaArrendadorId(idArrendador);
+  }
+
+  @Override
   public void addReserva(Reserva reserva) {
     repositorioReserva.save(reserva);
   }
@@ -42,6 +47,11 @@ public class ReservaServicio implements IReservaServicio {
   @Override
   public Long numReservas() {
     return repositorioReserva.count();
+  }
+
+  @Override
+  public Long numReservasByJugadorId(Long idJugador) {
+    return repositorioReserva.countByJugadorId(idJugador);
   }
   
 }

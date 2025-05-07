@@ -1,0 +1,20 @@
+<div class="contenedor-reservas">
+  <h2 class="titulo-seccion">
+    <i class="fas fa-calendar-check icono-titulo"></i> Reservas registradas
+  </h2>
+
+  <div *ngIf="reservas.length === 0" class="mensaje-vacio">
+    <i class="fas fa-info-circle icono-info"></i>
+    No hay reservas registradas para este arrendador.
+  </div>
+
+  <ul class="lista-reservas" *ngIf="reservas.length > 0">
+    <li class="tarjeta-reserva" *ngFor="let reserva of reservas">
+      <p><i class="fas fa-calendar-day"></i> <strong>Fecha:</strong> {{ reserva.fecha }}</p>
+      <p><i class="fas fa-clock"></i> <strong>Hora Ingreso:</strong> {{ reserva.horaIngreso }}</p>
+      <p><i class="fas fa-hourglass-end"></i> <strong>Hora Salida:</strong> {{ reserva.horaSalida }}</p>
+      <p><i class="fas fa-user"></i> <strong>Jugador:</strong> {{ reserva.jugador.nombre }}</p>
+      <p><i class="fas fa-dollar-sign"></i> <strong>Valor:</strong> ${{ reserva.valorPagar }}</p>
+    </li>
+  </ul>
+</div>

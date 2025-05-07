@@ -1,0 +1,67 @@
+.formulario-reserva {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-reserva h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 24px;
+  color: #2c3e50;
+}
+
+.icono {
+  color: #3498db;
+  margin-right: 0.5rem;
+}
+
+.campo-form {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.campo-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.campo-form input,
+.campo-form select {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s ease;
+}
+
+.campo-form input:focus,
+.campo-form select:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.campo-form.centrar {
+  text-align: center;
+}
+
+.btn-reservar {
+  padding: 0.75rem 2rem;
+  background-color: #2ecc71;
+  color: #fff;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-reservar:hover {
+  background-color: #27ae60;
+}

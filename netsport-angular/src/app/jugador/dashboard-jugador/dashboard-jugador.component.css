@@ -1,0 +1,52 @@
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #e0f8e9; /* Verde claro */
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-title {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #2e7d32; /* Verde oscuro */
+  text-align: center;
+}
+
+.nav-links a {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  text-decoration: none;
+  color: #333;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.nav-links a i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  color: #388e3c; /* Verde medio para íconos */
+}
+
+.nav-links a:hover {
+  background-color: #c8e6c9; /* Hover verde claro */
+}
+
+.active-link {
+  background-color: #a5d6a7; /* Verde activo */
+  font-weight: bold;
+  color: #1b5e20; /* Verde profundo */
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #f1f8e9; /* Fondo general suave */
+}

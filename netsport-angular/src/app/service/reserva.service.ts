@@ -24,6 +24,14 @@ export class ReservaService {
     return this.http.get<Reserva>(this.URL_ROOT + `/get-reserva/${id}`);
   }
 
+  findByCanchaArrendadorId(idArrendador:number): Observable<Reserva[]> {
+    return this.http.get<Reserva[]>(this.URL_ROOT + `/reservas-arrendador/${idArrendador}`);
+  }
+
+  numReservasByJugadorId(idJugador:number): Observable<number> {
+    return this.http.get<number>(this.URL_ROOT + `/get-num-reservas-jugador/${idJugador}`);
+  }
+
   addReserva(reserva:Reserva): Observable<any> {
     return this.http.post<any>(this.URL_ROOT + `/add`,reserva);
   }

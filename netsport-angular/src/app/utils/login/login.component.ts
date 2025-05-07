@@ -32,7 +32,7 @@ export class LoginComponent {
       case "jugador": 
         this.jugadorServicio.findByUsuarioAndContrasena(this.txtUsuario,this.txtContrasena).subscribe(j => {
           j !== undefined ?
-          this.router.navigate([`/jugador/perfil`]) :
+          this.router.navigate([`/jugador/dashboard/${j.id}/perfil/${j.id}`]) :
           alert("El usuario no existe.");
         });
       break;

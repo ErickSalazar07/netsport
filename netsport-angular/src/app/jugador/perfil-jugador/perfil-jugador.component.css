@@ -1,0 +1,47 @@
+.perfil-container {
+  background-color: #ffffff;
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  font-family: 'Segoe UI', sans-serif;
+  color: #2e7d32;
+}
+
+.titulo-perfil {
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2e7d32;
+}
+
+.icono-titulo {
+  color: #388e3c;
+  margin-right: 0.5rem;
+}
+
+.grid-perfil {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+
+.campo {
+  background-color: #e8f5e9; /* Verde muy claro */
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 15px;
+  color: #2c3e50;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  min-height: 60px;
+  word-break: break-word;
+}
+
+.icono-dato {
+  color: #1e88e5; /* Azul para íconos */
+  font-size: 1.2rem;
+  margin-top: 0.2rem;
+}

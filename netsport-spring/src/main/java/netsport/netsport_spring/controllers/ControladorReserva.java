@@ -44,6 +44,16 @@ public class ControladorReserva {
     return reservaServicio.findById(id);
   }
 
+  @GetMapping("/reservas-arrendador/{idArrendador}")
+  public List<Reserva> obtenerReservasByCanchaArrendadorId(@PathVariable("idArrendador") Long idArrendador) {
+    return reservaServicio.findByCanchaArrendadorId(idArrendador);
+  }
+
+  @GetMapping("/get-num-reservas-jugador/{idJugador}")
+  public Long obtenerNumReservasByJugadorId(@PathVariable("idJugador") Long idJugador) {
+    return reservaServicio.numReservasByJugadorId(idJugador);
+  }
+
 // PUT
 
   @PutMapping("/update")
