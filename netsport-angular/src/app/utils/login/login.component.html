@@ -9,5 +9,8 @@
       <input type="password" id="txt-constrasena" [(ngModel)]="txtContrasena" name="contrasena" required>
       <button type="button" (click)="login()">Ingresar</button>
     </form>
+    <div *ngIf="msgError" class="error-message">
+      {{ msgError }}
+    </div>
   </div>
 </div>
