@@ -27,7 +27,7 @@ export class AgregarReservaComponent {
     this.jugadorServicio.findById(this.idJugador).subscribe(j => {
       this.reserva.jugador = j;
       this.canchaServicio.findAll().subscribe(canchas => {
-        this.canchas = canchas;
+        this.canchas = canchas.filter(c => c.disponible === true);
       });
     });
   }

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import netsport.netsport_spring.models.Reserva;
+import netsport.netsport_spring.repositories.RepositorioCancha;
 import netsport.netsport_spring.repositories.RepositorioReserva;
 
 @Service
@@ -13,6 +14,9 @@ public class ReservaServicio implements IReservaServicio {
 
   @Autowired
   RepositorioReserva repositorioReserva;
+
+  @Autowired
+  RepositorioCancha repositorioCancha;
 
   @Override
   public Reserva findById(Long id) {
@@ -36,6 +40,8 @@ public class ReservaServicio implements IReservaServicio {
 
   @Override
   public void addReserva(Reserva reserva) {
+    reserva.getCancha().setDisponible(false);
+    repositorioCancha.save(reserva.getCancha());
     repositorioReserva.save(reserva);
   }
 
