@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class CanchaService {
 
-  URL_ROOT = "http://192.186.10.18:8090/cancha";
+  URL_ROOT = "http://localhost:8090/cancha";
 
 // Dependencias
   constructor(private http:HttpClient) { }

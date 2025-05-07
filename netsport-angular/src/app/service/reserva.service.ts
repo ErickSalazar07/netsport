@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ReservaService {
 
-  URL_ROOT = "http://192.168.10.18:8090/reserva";
+  URL_ROOT = "http://localhost:8090/reserva";
 
 // Dependencias
 

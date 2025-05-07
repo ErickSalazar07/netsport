@@ -1,19 +1,19 @@
 Fútbol 5,10,Calle 1 #45-67,true
-Fútbol 7,14,Carrera 12 #98-45,false
+Fútbol 7,14,Carrera 12 #98-45,true
 Baloncesto,10,Calle 22 #10-11,true
 Vóley Playa,6,Calle 5 #13-77,true
-Fútbol 11,22,Avenida 3 #88-22,false
+Fútbol 11,22,Avenida 3 #88-22,true
 Tenis,4,Carrera 9 #45-11,true
 Padel,4,Calle 88 #10-20,true
 Baloncesto,10,Carrera 30 #12-55,true
-Fútbol 5,10,Calle 15 #99-99,false
+Fútbol 5,10,Calle 15 #99-99,true
 Fútbol 7,14,Calle 2 #66-77,true
 Fútbol 11,22,Carrera 100 #30-21,true
 Tenis,4,Calle 8 #101-15,true
-Vóley Playa,6,Avenida 14 #12-45,false
+Vóley Playa,6,Avenida 14 #12-45,true
 Fútbol 5,10,Calle 90 #33-33,true
 Fútbol 7,14,Carrera 40 #50-60,true
-Padel,4,Calle 65 #45-76,false
+Padel,4,Calle 65 #45-76,true
 Fútbol 11,22,Avenida 33 #80-12,true
 Baloncesto,10,Calle 55 #10-90,true
 Vóley Playa,6,Carrera 25 #11-44,true

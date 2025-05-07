@@ -3,48 +3,37 @@
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  background-color: #f8f9fa;
+  background-color: #e0f0ff; /* azul muy claro */
   border-radius: 12px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
 }
 
 .inicio-arrendador h2 {
   font-size: 2.5rem;
-  color: #2c3e50;
+  color: #1565c0; /* azul oscuro */
   margin-bottom: 1.5rem;
 }
 
 .descripcion-arrendador h3 {
   font-size: 1.8rem;
-  color: #34495e;
+  color: #1976d2; /* azul intermedio */
   margin-top: 2rem;
-}
-
-.descripcion-arrendador ul {
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.descripcion-arrendador ul li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-  color: #555;
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.descripcion-arrendador ul li::before {
-  content: "✔";
-  position: absolute;
-  left: 0;
-  color: #2ecc71;
 }
 
 .descripcion-arrendador p {
   font-size: 1.1rem;
   color: #444;
-  margin: 1rem 0 2rem;
+  margin: 1rem 0;
+}
+
+.descripcion-arrendador ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  color: #333;
+  font-size: 1.05rem;
+  text-align: left;
+  margin: 1rem auto;
+  max-width: 600px;
 }
 
 .botones {
@@ -52,6 +41,7 @@
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .btn {
@@ -63,19 +53,19 @@
 }
 
 .btn-primario {
-  background-color: #2ecc71;
+  background-color: #607d8b; /* gris azulado */
   color: white;
 }
 
 .btn-primario:hover {
-  background-color: #27ae60;
+  background-color: #90a4ae;
 }
 
 .btn-secundario {
-  background-color: #3498db;
+  background-color: #06983e; /* azul principal */
   color: white;
 }
 
 .btn-secundario:hover {
-  background-color: #2980b9;
+  background-color: #42a5f5; /* azul más claro */
 }

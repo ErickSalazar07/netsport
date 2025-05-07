@@ -37,8 +37,8 @@
 
     <div class="campo-form">
       <label for="selectCancha"><i class="fas fa-futbol"></i> Seleccionar Cancha</label>
-      <select id="selectCancha" [(ngModel)]="reserva.cancha" required name="cancha">
-        <option [value]="cancha" *ngFor="let cancha of canchas">
+      <select id="selectCancha" [(ngModel)]="reserva.cancha.id" required name="cancha">
+        <option [value]="cancha.id" *ngFor="let cancha of canchas">
           {{ cancha.direccion }} - {{ cancha.tipoCancha }}
         </option>
       </select>
@@ -48,6 +48,10 @@
       <button type="submit" class="btn-reservar">
         <i class="fas fa-check-circle"></i> Reservar
       </button>
+    </div>
+
+    <div *ngIf="msgError" class="mensaje-error">
+      <i class="fas fa-exclamation-triangle"></i> {{ msgError }}
     </div>
   </form>
 </div>

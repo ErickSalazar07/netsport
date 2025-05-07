@@ -4,7 +4,7 @@ Andrés Gómez,andresg,password789
 Laura Torres,laurat,admin321
 Luis Ramírez,luisr,netpass111
 Ana Herrera,anah,clave000
-Pedro Mendoza,pedrom,tenis2023
+Pedro Mendoza,pedro,2025
 Mónica Ríos,monicar,passmoni
 Ricardo Díaz,ricardod,futbol456
 Verónica Silva,veros,clavever

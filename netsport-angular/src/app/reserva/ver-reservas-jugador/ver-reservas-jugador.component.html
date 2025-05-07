@@ -1,1 +1,27 @@
-<p>ver-reservas-jugador works!</p>
+<a [routerLink]="['/reserva/agregar-reserva', idJugador]" class="btn-registrar">
+  <i class="fas fa-plus-circle"></i> Nueva reserva
+</a>
+<div class="contenedor-reservas">
+  <div class="header">
+    <h2 class="titulo-seccion">
+      <i class="fas fa-calendar-check icono-titulo"></i> Reservas registradas
+    </h2>
+  </div>
+
+  <div *ngIf="reservas.length === 0" class="mensaje-vacio">
+    <i class="fas fa-info-circle icono-info"></i>
+    No hay reservas registradas para este jugador.
+  </div>
+
+  <ul class="lista-reservas" *ngIf="reservas.length > 0">
+    <li class="tarjeta-reserva" *ngFor="let reserva of reservas">
+      <p><i class="fas fa-calendar-day icono-dato"></i> <strong>Fecha:</strong> {{ reserva.fecha }}</p>
+      <p><i class="fas fa-map-marker-alt icono-dato"></i> <strong>Dirección de la Cancha:</strong> {{ reserva.cancha.direccion }}</p>
+      <p><i class="fas fa-futbol icono-dato"></i> <strong>Tipo de Cancha:</strong> {{ reserva.cancha.tipoCancha }}</p>
+      <p><i class="fas fa-sign-in-alt icono-dato"></i> <strong>Hora Ingreso:</strong> {{ reserva.horaIngreso }}</p>
+      <p><i class="fas fa-sign-out-alt icono-dato"></i> <strong>Hora Salida:</strong> {{ reserva.horaSalida }}</p>
+      <p><i class="fas fa-user-tie icono-dato"></i> <strong>Arrendador:</strong> {{ reserva.cancha.arrendador.nombre }}</p>
+      <p><i class="fas fa-dollar-sign icono-dato"></i> <strong>Valor:</strong> ${{ reserva.valorPagar }}</p>
+    </li>
+  </ul>
+</div>

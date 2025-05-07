@@ -5,11 +5,14 @@
     </div>
 
     <nav class="nav-links">
-      <a routerLink="/jugador/perfil" routerLinkActive="active-link">
+      <a [routerLink]="['perfil',idJugador]" routerLinkActive="active-link">
         <i class="fas fa-user"></i> Perfil
       </a>
-      <a routerLink="/jugador/reservas" routerLinkActive="active-link">
+      <a [routerLink]="['reservas',idJugador]" routerLinkActive="active-link">
         <i class="fas fa-calendar-alt"></i> Mis Reservas
+      </a>
+      <a [routerLink]="['/inicio']">
+        <i class="fas fa-sign-out-alt"></i> Cerrar Sesion
       </a>
     </nav>
   </aside>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard-jugador',
@@ -6,5 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./dashboard-jugador.component.css']
 })
 export class DashboardJugadorComponent {
+
+  constructor(
+    private route:ActivatedRoute
+  ) { }
+
+  idJugador:number = -1;
+
+  ngOnInit() {
+    this.idJugador = Number(this.route.snapshot.paramMap.get("id"));
+  }
 
 }

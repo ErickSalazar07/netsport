@@ -65,3 +65,16 @@
 .btn-reservar:hover {
   background-color: #27ae60;
 }
+
+.mensaje-error {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: bold;
+  font-size: 14px;
+}

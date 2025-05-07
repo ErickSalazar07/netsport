@@ -33,15 +33,58 @@ export class AgregarReservaComponent {
   }
 
   submitReserva() {
-
+    this.msgError = "";
+  
+    if (!this.camposValidos()) {
+      this.msgError = "Error: Todos los campos son obligatorios.";
+      return;
+    }
+  
+    const hoy = new Date();
+    const fechaSeleccionada = new Date(this.reserva.fecha);
+    const horaIngreso = this.convertirHora(this.reserva.horaIngreso);
+    const horaSalida = this.convertirHora(this.reserva.horaSalida);
+  
+    if (fechaSeleccionada < new Date(hoy.toDateString())) {
+      this.msgError = "Error: No puedes registrar reservas en fechas pasadas.";
+      return;
+    }
+  
+    if (horaIngreso >= horaSalida) {
+      this.msgError = "Error: La hora de ingreso debe ser menor que la hora de salida.";
+      return;
+    }
+  
+    const diferenciaMinutos = (horaSalida.getTime() - horaIngreso.getTime()) / (1000 * 60);
+    if (diferenciaMinutos < 30) {
+      this.msgError = "Error: La reserva debe durar al menos 30 minutos.";
+      return;
+    }
+  
+    console.log(this.reserva.cancha);
+  
+    this.canchaServicio.findById(this.reserva.cancha.id).subscribe(c => {
+      this.reserva.cancha = c;
+      this.reservaServicio.addReserva(this.reserva).subscribe({
+        complete: () => this.location.back()
+      });
+    });
   }
-
+  
   camposValidos(): boolean {
-    return true;
+    return !!(this.reserva.fecha && this.reserva.horaIngreso && this.reserva.horaSalida && this.reserva.cancha.id !== -1);
   }
-
+  
+  // Método de utilidad para convertir 'HH:mm' a objeto Date
+  convertirHora(hora: string): Date {
+    const partes = hora.split(":");
+    const fecha = new Date();
+    fecha.setHours(parseInt(partes[0]), parseInt(partes[1]), 0, 0);
+    return fecha;
+  }
+  
   idJugador:number = -1;
-
+  msgError:string = "";
   canchas:Cancha[] = [];
 
   reserva:Reserva = {

@@ -134,7 +134,11 @@ public class DatabaseInit implements ApplicationRunner {
         Long idCancha = 1L + randCancha.nextInt(totalCanchas.intValue());
         Long idJugador = 1L + randJugador.nextInt(totalJugadores.intValue());
 
-        reserva.setCancha(repositorioCancha.findById(idCancha).orElse(null));
+        Cancha cancha = repositorioCancha.findById(idCancha).orElse(null);
+        cancha.setDisponible(false);
+        repositorioCancha.save(cancha);
+
+        reserva.setCancha(cancha);
         reserva.setJugador(repositorioJugador.findById(idJugador).orElse(null));
 
         repositorioReserva.save(reserva);
