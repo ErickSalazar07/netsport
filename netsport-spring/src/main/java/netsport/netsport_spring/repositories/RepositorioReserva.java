@@ -11,6 +11,7 @@ import netsport.netsport_spring.models.Reserva;
 @Repository
 public interface RepositorioReserva extends JpaRepository<Reserva,Long> {
   public List<Reserva> findByCanchaArrendadorId(Long idArrendador);
+  public List<Reserva> findByJugadorId(Long jugadorId);
   public long countByJugadorId(Long jugadorId);
   public long count();
 }

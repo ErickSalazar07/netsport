@@ -30,6 +30,11 @@ public class ReservaServicio implements IReservaServicio {
   }
 
   @Override
+  public List<Reserva> findByJugadorId(Long idJugador) {
+    return repositorioReserva.findByJugadorId(idJugador);
+  }
+
+  @Override
   public void addReserva(Reserva reserva) {
     repositorioReserva.save(reserva);
   }

@@ -20,10 +20,10 @@ import netsport.netsport_spring.services.reserva.IReservaServicio;
 @RequestMapping("/reserva")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ControladorReserva {
-  
+
   @Autowired
   IReservaServicio reservaServicio;
-  
+
 // POST
 
   @PostMapping("/add")
@@ -49,6 +49,11 @@ public class ControladorReserva {
     return reservaServicio.findByCanchaArrendadorId(idArrendador);
   }
 
+  @GetMapping("/reservas-jugador/{idJugador}")
+  public List<Reserva> obtenerReservasByJugadorId(@PathVariable("idJugador") Long idJugador) {
+    return reservaServicio.findByJugadorId(idJugador);
+  }
+
   @GetMapping("/get-num-reservas-jugador/{idJugador}")
   public Long obtenerNumReservasByJugadorId(@PathVariable("idJugador") Long idJugador) {
     return reservaServicio.numReservasByJugadorId(idJugador);
@@ -69,7 +74,7 @@ public class ControladorReserva {
   }
 
 // DELETE
-  
+
   @DeleteMapping("/delete/{id}")
   public void eliminarReserva(@PathVariable("id") Long id) {
     reservaServicio.deleteById(id);

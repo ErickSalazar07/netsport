@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ArrendadorService {
 
-  URL_ROOT = "http://localhost:8090/arrendador";
+  URL_ROOT = "http://192.168.10.18:8090/arrendador";
 
 // Dependencias
   constructor(private http:HttpClient) { }
